@@ -8,38 +8,46 @@ export function Notice({ tone = 'info', children }: { tone?: 'info' | 'warn' | '
 
 export function Freshness({ label = 'Last checked' }: { label?: string }) {
   return (
-    <div className="freshness">
+    <div className="freshness hud-strip">
       <span>{label}: {site.checkedAt}</span>
       <span>Source status: needs verification before publishing exact game data</span>
+      <span>Unofficial / not affiliated</span>
     </div>
   );
 }
 
 export function Hero({ eyebrow, title, description, actions }: { eyebrow: string; title: string; description: string; actions?: { href: string; label: string }[] }) {
   return (
-    <section className="hero">
-      <div className="hero-copy">
-        <p className="eyebrow">{eyebrow}</p>
-        <h1>{title}</h1>
-        <p className="lead">{description}</p>
-        <Notice><strong>Unofficial:</strong> {disclaimers.short}</Notice>
-        {actions ? <div className="actions">{actions.map(a => <Link className="button" href={a.href} key={a.href}>{a.label}</Link>)}</div> : null}
+    <section className="page-hero grid-bg">
+      <div className="scanline" />
+      <div className="hero-stamps">
+        <span>Unofficial Fan Guide</span>
+        <span>Needs Verification Data</span>
       </div>
-      <div className="hero-panel" aria-label="Anime Squadron guide interface illustration">
-        <div className="crystal" />
-        <div className="lane-grid"><span /><span /><span /><span /><span /><span /></div>
-        <div className="stat-card cyan"><b>Codes</b><small>copy only after verification</small></div>
-        <div className="stat-card purple"><b>Traits</b><small>reroll with caution</small></div>
-        <div className="stat-card gold"><b>Tier notes</b><small>methodology first</small></div>
-      </div>
+      <p className="eyebrow">{eyebrow}</p>
+      <h1>{title}</h1>
+      <p className="lead">{description}</p>
+      <Notice><strong>Unofficial:</strong> {disclaimers.short}</Notice>
+      {actions ? <div className="actions">{actions.map(a => <Link className="button" href={a.href} key={a.href}>{a.label}</Link>)}</div> : null}
     </section>
+  );
+}
+
+export function ModuleCard({ number, title, text, href, tone = 'cyan' }: { number: string; title: string; text: string; href: string; tone?: 'cyan' | 'purple' | 'gold' | 'white' }) {
+  return (
+    <Link className={`module-card ${tone}`} href={href}>
+      <div className="module-head"><span>Module {number}</span><i>{tone === 'cyan' ? '⚡' : tone === 'purple' ? '★' : tone === 'gold' ? '✦' : '⛓'}</i></div>
+      <h3>{title}</h3>
+      <p>{text}</p>
+      <b className="corner" aria-hidden="true" />
+    </Link>
   );
 }
 
 export function CardGrid({ items }: { items: { title: string; text: string; href?: string; tag?: string }[] }) {
   return <div className="card-grid">{items.map(item => {
     const body = <><span className="tag">{item.tag ?? 'Guide'}</span><h3>{item.title}</h3><p>{item.text}</p></>;
-    return item.href ? <Link className="card" href={item.href} key={item.title}>{body}</Link> : <article className="card" key={item.title}>{body}</article>;
+    return item.href ? <Link className="card bevel-edge" href={item.href} key={item.title}>{body}</Link> : <article className="card bevel-edge" key={item.title}>{body}</article>;
   })}</div>;
 }
 
