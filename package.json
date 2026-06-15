@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "check:content": "node scripts/check-content.mjs"
+    "check:content": "node scripts/check-content.mjs",
+    "deploy:workers": "npm run build && wrangler deploy",
+    "cf:dry-run": "npm run build && wrangler deploy --dry-run"
   },
   "dependencies": {
     "next": "16.2.9",
@@ -20,7 +22,8 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.83.0"
   },
   "description": "Unofficial Anime Squadron Guide Hub built with Next.js."
 }
