@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="240" viewBox="0 0 960 240" role="img" aria-label="Anime Squadron Guide logo">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="0.55" stop-color="#8B5CF6"/>
+      <stop offset="1" stop-color="#FBBF24"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="960" height="240" rx="34" fill="#080B14"/>
+  <path d="M38 199 L38 48 L260 48 L260 199 Z" fill="#0F172A" stroke="#22D3EE" stroke-width="3" opacity=".9"/>
+  <path d="M62 177 L118 72 L171 177 Z" fill="none" stroke="url(#g)" stroke-width="16" stroke-linejoin="round" filter="url(#glow)"/>
+  <path d="M143 177 L199 72 L236 143" fill="none" stroke="#FBBF24" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+  <path d="M73 154 H225" stroke="#22D3EE" stroke-width="7" opacity=".8"/>
+  <path d="M78 104 H215" stroke="#8B5CF6" stroke-width="5" opacity=".7"/>
+  <g opacity=".25" stroke="#22D3EE"><path d="M40 82 H260"/><path d="M40 128 H260"/><path d="M40 174 H260"/><path d="M88 48 V199"/><path d="M151 48 V199"/><path d="M214 48 V199"/></g>
+  <text x="300" y="112" font-family="Barlow Condensed, Oswald, Arial Narrow, sans-serif" font-size="66" font-weight="900" letter-spacing="3" fill="#F8FAFC">ANIME SQUADRON</text>
+  <text x="304" y="156" font-family="Space Grotesk, Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="7" fill="#22D3EE">GUIDE HUB</text>
+  <text x="306" y="192" font-family="Space Grotesk, Arial, sans-serif" font-size="18" fill="#94A3B8">Unofficial fan guide • Codes • Tier List • Traits • Beginner Path</text>
+</svg>
