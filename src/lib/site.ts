@@ -5,7 +5,7 @@ export const site = {
   url: 'https://anime-squadron.net',
   description: 'Unofficial Anime Squadron guide for codes, tier list notes, traits, and beginner progression on Roblox.',
   checkedAt: '2026-06-15',
-  email: 'hello@anime-squadron.net',
+  email: 'support@anime-squadron.net',
 };
 
 export const nav = [
